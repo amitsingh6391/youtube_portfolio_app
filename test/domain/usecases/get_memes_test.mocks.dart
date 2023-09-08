@@ -11,6 +11,7 @@ import 'package:meme_app/domain/entities/memes.dart' as _i6;
 import 'package:meme_app/domain/entities/project.dart' as _i7;
 import 'package:meme_app/domain/repositories/app_repositories.dart' as _i3;
 import 'package:meme_app/domain/usecases/delete_project_by_id.dart' as _i8;
+import 'package:meme_app/domain/usecases/get_projects_by_filter.dart' as _i9;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -76,11 +77,28 @@ class MockAppRepositories extends _i1.Mock implements _i3.AppRepositories {
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, List<_i7.Project>>>);
   @override
-  _i4.Future<_i2.Either<_i5.Failure, List<_i7.Project>>> deleteProjectById(
+  _i4.Future<_i2.Either<_i5.Failure, bool>> deleteProjectById(
           _i8.DeleteProjectByIdParam? param) =>
       (super.noSuchMethod(
         Invocation.method(
           #deleteProjectById,
+          [param],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, bool>>.value(
+            _FakeEither_0<_i5.Failure, bool>(
+          this,
+          Invocation.method(
+            #deleteProjectById,
+            [param],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, bool>>);
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, List<_i7.Project>>> getProjectsByFilter(
+          _i9.GetProjectsByFilterParam? param) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getProjectsByFilter,
           [param],
         ),
         returnValue:
@@ -88,7 +106,7 @@ class MockAppRepositories extends _i1.Mock implements _i3.AppRepositories {
                 _FakeEither_0<_i5.Failure, List<_i7.Project>>(
           this,
           Invocation.method(
-            #deleteProjectById,
+            #getProjectsByFilter,
             [param],
           ),
         )),

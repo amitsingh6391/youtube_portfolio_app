@@ -20,18 +20,21 @@ mixin _$PortfolioEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() getProjects,
     required TResult Function(int id) deleteProjectById,
+    required TResult Function(String projectCategory) getProjectsByFilter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getProjects,
     TResult? Function(int id)? deleteProjectById,
+    TResult? Function(String projectCategory)? getProjectsByFilter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getProjects,
     TResult Function(int id)? deleteProjectById,
+    TResult Function(String projectCategory)? getProjectsByFilter,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$PortfolioEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetProjects value) getProjects,
     required TResult Function(_DeleteProjectByID value) deleteProjectById,
+    required TResult Function(_GetProjectsByFilter value) getProjectsByFilter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetProjects value)? getProjects,
     TResult? Function(_DeleteProjectByID value)? deleteProjectById,
+    TResult? Function(_GetProjectsByFilter value)? getProjectsByFilter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetProjects value)? getProjects,
     TResult Function(_DeleteProjectByID value)? deleteProjectById,
+    TResult Function(_GetProjectsByFilter value)? getProjectsByFilter,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +120,7 @@ class _$_GetProjects implements _GetProjects {
   TResult when<TResult extends Object?>({
     required TResult Function() getProjects,
     required TResult Function(int id) deleteProjectById,
+    required TResult Function(String projectCategory) getProjectsByFilter,
   }) {
     return getProjects();
   }
@@ -123,6 +130,7 @@ class _$_GetProjects implements _GetProjects {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getProjects,
     TResult? Function(int id)? deleteProjectById,
+    TResult? Function(String projectCategory)? getProjectsByFilter,
   }) {
     return getProjects?.call();
   }
@@ -132,6 +140,7 @@ class _$_GetProjects implements _GetProjects {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getProjects,
     TResult Function(int id)? deleteProjectById,
+    TResult Function(String projectCategory)? getProjectsByFilter,
     required TResult orElse(),
   }) {
     if (getProjects != null) {
@@ -145,6 +154,7 @@ class _$_GetProjects implements _GetProjects {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetProjects value) getProjects,
     required TResult Function(_DeleteProjectByID value) deleteProjectById,
+    required TResult Function(_GetProjectsByFilter value) getProjectsByFilter,
   }) {
     return getProjects(this);
   }
@@ -154,6 +164,7 @@ class _$_GetProjects implements _GetProjects {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetProjects value)? getProjects,
     TResult? Function(_DeleteProjectByID value)? deleteProjectById,
+    TResult? Function(_GetProjectsByFilter value)? getProjectsByFilter,
   }) {
     return getProjects?.call(this);
   }
@@ -163,6 +174,7 @@ class _$_GetProjects implements _GetProjects {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetProjects value)? getProjects,
     TResult Function(_DeleteProjectByID value)? deleteProjectById,
+    TResult Function(_GetProjectsByFilter value)? getProjectsByFilter,
     required TResult orElse(),
   }) {
     if (getProjects != null) {
@@ -243,6 +255,7 @@ class _$_DeleteProjectByID implements _DeleteProjectByID {
   TResult when<TResult extends Object?>({
     required TResult Function() getProjects,
     required TResult Function(int id) deleteProjectById,
+    required TResult Function(String projectCategory) getProjectsByFilter,
   }) {
     return deleteProjectById(id);
   }
@@ -252,6 +265,7 @@ class _$_DeleteProjectByID implements _DeleteProjectByID {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getProjects,
     TResult? Function(int id)? deleteProjectById,
+    TResult? Function(String projectCategory)? getProjectsByFilter,
   }) {
     return deleteProjectById?.call(id);
   }
@@ -261,6 +275,7 @@ class _$_DeleteProjectByID implements _DeleteProjectByID {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getProjects,
     TResult Function(int id)? deleteProjectById,
+    TResult Function(String projectCategory)? getProjectsByFilter,
     required TResult orElse(),
   }) {
     if (deleteProjectById != null) {
@@ -274,6 +289,7 @@ class _$_DeleteProjectByID implements _DeleteProjectByID {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetProjects value) getProjects,
     required TResult Function(_DeleteProjectByID value) deleteProjectById,
+    required TResult Function(_GetProjectsByFilter value) getProjectsByFilter,
   }) {
     return deleteProjectById(this);
   }
@@ -283,6 +299,7 @@ class _$_DeleteProjectByID implements _DeleteProjectByID {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetProjects value)? getProjects,
     TResult? Function(_DeleteProjectByID value)? deleteProjectById,
+    TResult? Function(_GetProjectsByFilter value)? getProjectsByFilter,
   }) {
     return deleteProjectById?.call(this);
   }
@@ -292,6 +309,7 @@ class _$_DeleteProjectByID implements _DeleteProjectByID {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetProjects value)? getProjects,
     TResult Function(_DeleteProjectByID value)? deleteProjectById,
+    TResult Function(_GetProjectsByFilter value)? getProjectsByFilter,
     required TResult orElse(),
   }) {
     if (deleteProjectById != null) {
@@ -307,6 +325,148 @@ abstract class _DeleteProjectByID implements PortfolioEvent {
   int get id;
   @JsonKey(ignore: true)
   _$$_DeleteProjectByIDCopyWith<_$_DeleteProjectByID> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_GetProjectsByFilterCopyWith<$Res> {
+  factory _$$_GetProjectsByFilterCopyWith(_$_GetProjectsByFilter value,
+          $Res Function(_$_GetProjectsByFilter) then) =
+      __$$_GetProjectsByFilterCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String projectCategory});
+}
+
+/// @nodoc
+class __$$_GetProjectsByFilterCopyWithImpl<$Res>
+    extends _$PortfolioEventCopyWithImpl<$Res, _$_GetProjectsByFilter>
+    implements _$$_GetProjectsByFilterCopyWith<$Res> {
+  __$$_GetProjectsByFilterCopyWithImpl(_$_GetProjectsByFilter _value,
+      $Res Function(_$_GetProjectsByFilter) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? projectCategory = null,
+  }) {
+    return _then(_$_GetProjectsByFilter(
+      null == projectCategory
+          ? _value.projectCategory
+          : projectCategory // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GetProjectsByFilter implements _GetProjectsByFilter {
+  const _$_GetProjectsByFilter(this.projectCategory);
+
+  @override
+  final String projectCategory;
+
+  @override
+  String toString() {
+    return 'PortfolioEvent.getProjectsByFilter(projectCategory: $projectCategory)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GetProjectsByFilter &&
+            (identical(other.projectCategory, projectCategory) ||
+                other.projectCategory == projectCategory));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, projectCategory);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_GetProjectsByFilterCopyWith<_$_GetProjectsByFilter> get copyWith =>
+      __$$_GetProjectsByFilterCopyWithImpl<_$_GetProjectsByFilter>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getProjects,
+    required TResult Function(int id) deleteProjectById,
+    required TResult Function(String projectCategory) getProjectsByFilter,
+  }) {
+    return getProjectsByFilter(projectCategory);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getProjects,
+    TResult? Function(int id)? deleteProjectById,
+    TResult? Function(String projectCategory)? getProjectsByFilter,
+  }) {
+    return getProjectsByFilter?.call(projectCategory);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getProjects,
+    TResult Function(int id)? deleteProjectById,
+    TResult Function(String projectCategory)? getProjectsByFilter,
+    required TResult orElse(),
+  }) {
+    if (getProjectsByFilter != null) {
+      return getProjectsByFilter(projectCategory);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetProjects value) getProjects,
+    required TResult Function(_DeleteProjectByID value) deleteProjectById,
+    required TResult Function(_GetProjectsByFilter value) getProjectsByFilter,
+  }) {
+    return getProjectsByFilter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetProjects value)? getProjects,
+    TResult? Function(_DeleteProjectByID value)? deleteProjectById,
+    TResult? Function(_GetProjectsByFilter value)? getProjectsByFilter,
+  }) {
+    return getProjectsByFilter?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetProjects value)? getProjects,
+    TResult Function(_DeleteProjectByID value)? deleteProjectById,
+    TResult Function(_GetProjectsByFilter value)? getProjectsByFilter,
+    required TResult orElse(),
+  }) {
+    if (getProjectsByFilter != null) {
+      return getProjectsByFilter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetProjectsByFilter implements PortfolioEvent {
+  const factory _GetProjectsByFilter(final String projectCategory) =
+      _$_GetProjectsByFilter;
+
+  String get projectCategory;
+  @JsonKey(ignore: true)
+  _$$_GetProjectsByFilterCopyWith<_$_GetProjectsByFilter> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

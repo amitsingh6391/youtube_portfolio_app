@@ -5,6 +5,7 @@ import 'package:meme_app/data/models/memes_model.dart';
 import 'package:meme_app/domain/entities/project.dart';
 import 'package:meme_app/domain/repositories/app_repositories.dart';
 import 'package:meme_app/domain/usecases/delete_project_by_id.dart';
+import 'package:meme_app/domain/usecases/get_projects_by_filter.dart';
 
 class AppRepositoriesImpl implements AppRepositories {
   const AppRepositoriesImpl({required this.memeDataSources});
@@ -23,5 +24,11 @@ class AppRepositoriesImpl implements AppRepositories {
   Future<Either<Failure, bool>> deleteProjectById(
       DeleteProjectByIdParam param) {
     return memeDataSources.deleteProjectById(param);
+  }
+
+  @override
+  Future<Either<Failure, List<Project>>> getProjectsByFilter(
+      GetProjectsByFilterParam param) {
+    return memeDataSources.getProjectsByFilter(param);
   }
 }

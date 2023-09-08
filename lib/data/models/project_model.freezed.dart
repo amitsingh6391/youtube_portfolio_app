@@ -25,6 +25,7 @@ mixin _$ProjectModel {
   String get description => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   String get projectUrl => throw _privateConstructorUsedError;
+  String get projectCategory => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,7 +44,8 @@ abstract class $ProjectModelCopyWith<$Res> {
       String title,
       String description,
       String imageUrl,
-      String projectUrl});
+      String projectUrl,
+      String projectCategory});
 }
 
 /// @nodoc
@@ -64,6 +66,7 @@ class _$ProjectModelCopyWithImpl<$Res, $Val extends ProjectModel>
     Object? description = null,
     Object? imageUrl = null,
     Object? projectUrl = null,
+    Object? projectCategory = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -86,6 +89,10 @@ class _$ProjectModelCopyWithImpl<$Res, $Val extends ProjectModel>
           ? _value.projectUrl
           : projectUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      projectCategory: null == projectCategory
+          ? _value.projectCategory
+          : projectCategory // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -103,7 +110,8 @@ abstract class _$$_ProjectModelCopyWith<$Res>
       String title,
       String description,
       String imageUrl,
-      String projectUrl});
+      String projectUrl,
+      String projectCategory});
 }
 
 /// @nodoc
@@ -122,6 +130,7 @@ class __$$_ProjectModelCopyWithImpl<$Res>
     Object? description = null,
     Object? imageUrl = null,
     Object? projectUrl = null,
+    Object? projectCategory = null,
   }) {
     return _then(_$_ProjectModel(
       id: null == id
@@ -144,6 +153,10 @@ class __$$_ProjectModelCopyWithImpl<$Res>
           ? _value.projectUrl
           : projectUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      projectCategory: null == projectCategory
+          ? _value.projectCategory
+          : projectCategory // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -156,7 +169,8 @@ class _$_ProjectModel implements _ProjectModel {
       required this.title,
       required this.description,
       required this.imageUrl,
-      required this.projectUrl});
+      required this.projectUrl,
+      required this.projectCategory});
 
   factory _$_ProjectModel.fromJson(Map<String, dynamic> json) =>
       _$$_ProjectModelFromJson(json);
@@ -171,10 +185,12 @@ class _$_ProjectModel implements _ProjectModel {
   final String imageUrl;
   @override
   final String projectUrl;
+  @override
+  final String projectCategory;
 
   @override
   String toString() {
-    return 'ProjectModel(id: $id, title: $title, description: $description, imageUrl: $imageUrl, projectUrl: $projectUrl)';
+    return 'ProjectModel(id: $id, title: $title, description: $description, imageUrl: $imageUrl, projectUrl: $projectUrl, projectCategory: $projectCategory)';
   }
 
   @override
@@ -189,13 +205,15 @@ class _$_ProjectModel implements _ProjectModel {
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
             (identical(other.projectUrl, projectUrl) ||
-                other.projectUrl == projectUrl));
+                other.projectUrl == projectUrl) &&
+            (identical(other.projectCategory, projectCategory) ||
+                other.projectCategory == projectCategory));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, title, description, imageUrl, projectUrl);
+  int get hashCode => Object.hash(runtimeType, id, title, description, imageUrl,
+      projectUrl, projectCategory);
 
   @JsonKey(ignore: true)
   @override
@@ -217,7 +235,8 @@ abstract class _ProjectModel implements ProjectModel {
       required final String title,
       required final String description,
       required final String imageUrl,
-      required final String projectUrl}) = _$_ProjectModel;
+      required final String projectUrl,
+      required final String projectCategory}) = _$_ProjectModel;
 
   factory _ProjectModel.fromJson(Map<String, dynamic> json) =
       _$_ProjectModel.fromJson;
@@ -232,6 +251,8 @@ abstract class _ProjectModel implements ProjectModel {
   String get imageUrl;
   @override
   String get projectUrl;
+  @override
+  String get projectCategory;
   @override
   @JsonKey(ignore: true)
   _$$_ProjectModelCopyWith<_$_ProjectModel> get copyWith =>

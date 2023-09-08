@@ -6,6 +6,7 @@ import 'package:meme_app/data/repositories/app_repositories_impl.dart';
 import 'package:meme_app/domain/usecases/delete_project_by_id.dart';
 import 'package:meme_app/domain/usecases/get_memes.dart';
 import 'package:meme_app/domain/usecases/get_projects.dart';
+import 'package:meme_app/domain/usecases/get_projects_by_filter.dart';
 
 final getIt = GetIt.instance;
 
@@ -20,11 +21,15 @@ void configureDependencies() {
   getIt.registerSingleton(
     GetMemes(appRepositories: getIt<AppRepositoriesImpl>()),
   );
+
   getIt.registerSingleton(
     ThemeBloc(),
   );
   getIt.registerSingleton(
     GetProjects(appRepositories: getIt<AppRepositoriesImpl>()),
+  );
+  getIt.registerSingleton(
+    GetProjectsByFilter(appRepositories: getIt<AppRepositoriesImpl>()),
   );
   getIt.registerSingleton(
     DeleteProjectById(appRepositories: getIt<AppRepositoriesImpl>()),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meme_app/domain/entities/project.dart';
 import 'package:meme_app/presentation/bloc/portfolio/portfolio_bloc.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectDetailsDataWidget extends StatelessWidget {
   const ProjectDetailsDataWidget({
@@ -42,7 +43,15 @@ class ProjectDetailsDataWidget extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      if (await canLaunchUrl(
+                        Uri.parse(project.projectUrl),
+                      )) {
+                        await launchUrl(
+                          Uri.parse(project.projectUrl),
+                        );
+                      }
+                    },
                     icon: const Icon(
                       Icons.link_outlined,
                     ),

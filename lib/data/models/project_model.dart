@@ -12,6 +12,7 @@ class ProjectModel extends Project with _$ProjectModel {
     required String description,
     required String imageUrl,
     required String projectUrl,
+    required String projectCategory,
   }) = _ProjectModel;
 
   factory ProjectModel.fromJson(Map<String, dynamic> json) =>

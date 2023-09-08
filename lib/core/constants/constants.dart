@@ -2,6 +2,7 @@ const baseUrl = 'https://api.imgflip.com/get_memes';
 const projectBaseUrl = 'https://portfolio-app-5ho6.onrender.com/';
 const projectGet = '${projectBaseUrl}projects/get/';
 const projectDeleteById = '${projectBaseUrl}projects/delete/';
+const projectByFilter = '${projectBaseUrl}projects/get-project-by-filter/';
 
 abstract class AppConstants {
   static const message =

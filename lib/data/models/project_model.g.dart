@@ -13,6 +13,7 @@ _$_ProjectModel _$$_ProjectModelFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String,
       imageUrl: json['imageUrl'] as String,
       projectUrl: json['projectUrl'] as String,
+      projectCategory: json['projectCategory'] as String,
     );
 
 Map<String, dynamic> _$$_ProjectModelToJson(_$_ProjectModel instance) =>
@@ -22,4 +23,5 @@ Map<String, dynamic> _$$_ProjectModelToJson(_$_ProjectModel instance) =>
       'description': instance.description,
       'imageUrl': instance.imageUrl,
       'projectUrl': instance.projectUrl,
+      'projectCategory': instance.projectCategory,
     };

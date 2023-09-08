@@ -11,6 +11,7 @@ import 'package:meme_app/data/datasources/app_datasources.dart' as _i3;
 import 'package:meme_app/data/models/memes_model.dart' as _i6;
 import 'package:meme_app/data/models/project_model.dart' as _i7;
 import 'package:meme_app/domain/usecases/delete_project_by_id.dart' as _i8;
+import 'package:meme_app/domain/usecases/get_projects_by_filter.dart' as _i9;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -77,21 +78,38 @@ class MockAppDataSources extends _i1.Mock implements _i3.AppDataSources {
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, List<_i7.ProjectModel>>>);
   @override
-  _i4.Future<_i2.Either<_i5.Failure, List<_i7.ProjectModel>>> deleteProjectById(
+  _i4.Future<_i2.Either<_i5.Failure, bool>> deleteProjectById(
           _i8.DeleteProjectByIdParam? param) =>
       (super.noSuchMethod(
         Invocation.method(
           #deleteProjectById,
           [param],
         ),
-        returnValue:
-            _i4.Future<_i2.Either<_i5.Failure, List<_i7.ProjectModel>>>.value(
-                _FakeEither_0<_i5.Failure, List<_i7.ProjectModel>>(
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, bool>>.value(
+            _FakeEither_0<_i5.Failure, bool>(
           this,
           Invocation.method(
             #deleteProjectById,
             [param],
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, List<_i7.ProjectModel>>>);
+      ) as _i4.Future<_i2.Either<_i5.Failure, bool>>);
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, List<_i7.ProjectModel>>>
+      getProjectsByFilter(_i9.GetProjectsByFilterParam? param) =>
+          (super.noSuchMethod(
+            Invocation.method(
+              #getProjectsByFilter,
+              [param],
+            ),
+            returnValue: _i4
+                .Future<_i2.Either<_i5.Failure, List<_i7.ProjectModel>>>.value(
+                _FakeEither_0<_i5.Failure, List<_i7.ProjectModel>>(
+              this,
+              Invocation.method(
+                #getProjectsByFilter,
+                [param],
+              ),
+            )),
+          ) as _i4.Future<_i2.Either<_i5.Failure, List<_i7.ProjectModel>>>);
 }
