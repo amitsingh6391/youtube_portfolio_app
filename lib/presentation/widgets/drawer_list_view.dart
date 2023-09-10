@@ -1,11 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:meme_app/presentation/bloc/portfolio/portfolio_bloc.dart';
 import 'package:meme_app/presentation/widgets/drawer_menu_tile.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DrawerListView extends StatelessWidget {
   const DrawerListView({
     super.key,
   });
+
+  Future<void> _addfeedback() async {
+    final Uri emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: 'recipient@example.com',
+      queryParameters: {
+        'subject': 'Subject of the email',
+        'body': 'Body of the email',
+      },
+    );
+    if (await canLaunchUrl(
+      Uri.parse(emailLaunchUri.toString()),
+    )) {
+      await launchUrl(
+        Uri.parse(emailLaunchUri.toString()),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +52,14 @@ class DrawerListView extends StatelessWidget {
           leadingIcon: const Icon(
             Icons.trending_up_outlined,
           ),
-          onTap: () => context.pop(),
+          onTap: () {
+            context.read<PortfolioBloc>().add(
+                  const PortfolioEvent.getProjectsByFilter(
+                    'trending',
+                  ),
+                );
+            context.pop();
+          },
           title: 'Trending',
         ),
         const SizedBox(height: 10),
@@ -40,25 +68,9 @@ class DrawerListView extends StatelessWidget {
         DrawerMenuTile(
           leadingIcon: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 4),
-            child: Icon(Icons.settings_outlined),
-          ),
-          onTap: () => context.pop(),
-          title: 'Setting',
-        ),
-        DrawerMenuTile(
-          leadingIcon: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4),
-            child: Icon(Icons.help_outline),
-          ),
-          onTap: () => context.pop(),
-          title: 'Help',
-        ),
-        DrawerMenuTile(
-          leadingIcon: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4),
             child: Icon(Icons.feedback_outlined),
           ),
-          onTap: () => context.pop(),
+          onTap: _addfeedback,
           title: 'Feedback',
         ),
       ],

@@ -4,6 +4,8 @@ const projectGet = '${projectBaseUrl}projects/get/';
 const projectDeleteById = '${projectBaseUrl}projects/delete/';
 const projectByFilter = '${projectBaseUrl}projects/get-project-by-filter/';
 
+const notFoundAnyProjects = "didn't find any project";
+
 abstract class AppConstants {
   static const message =
       '''Say goodbye to manual posting and hello to seamless automation

@@ -41,13 +41,11 @@ class _MobilePortfolioHomePage extends StatelessWidget {
       ),
       body: const Padding(
         padding: EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              ProjectTypeList(),
-              ProjectGridWidget(),
-            ],
-          ),
+        child: Column(
+          children: [
+            ProjectTypeList(),
+            Expanded(child: ProjectGridWidget()),
+          ],
         ),
       ),
     );

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:meme_app/core/constants/asset_path.dart';
+import 'package:meme_app/core/constants/constants.dart';
 
 class CustomErrorWidget extends StatelessWidget {
-  final String errorMessage;
+  final String? errorMessage;
   final VoidCallback onRetryPressed;
 
   const CustomErrorWidget({
@@ -14,10 +15,10 @@ class CustomErrorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          errorMessage,
+          errorMessage ?? notFoundAnyProjects,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         ConstrainedBox(
           constraints: const BoxConstraints(

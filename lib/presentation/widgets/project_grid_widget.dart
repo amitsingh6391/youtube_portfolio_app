@@ -22,7 +22,7 @@ class ProjectGridWidget extends StatelessWidget {
           } else if (state.failure != null ||
               (state.projects != null && state.projects!.isEmpty)) {
             return CustomErrorWidget(
-              errorMessage: state.failure?.message ?? '',
+              errorMessage: state.failure?.message,
               onRetryPressed: () {
                 context.read<PortfolioBloc>().add(
                       const PortfolioEvent.getProjects(),
