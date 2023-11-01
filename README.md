@@ -1,8 +1,8 @@
 # youtube_portfolio_app
 
-A new Flutter project.
+A new Flutter project for Youtube_Portfolio_app+Node.js/Express.
 
-## Getting Started
+
 
 This project is a starting point for a Flutter application.
 
